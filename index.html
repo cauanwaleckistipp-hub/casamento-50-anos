@@ -44,7 +44,7 @@
             margin-bottom: 30px;
         }
 
-        /* --- DUAS FOTOS --- */
+        /* --- DUAS FOTOS PRINCIPAIS --- */
         .fotos-container {
             display: flex;
             justify-content: center;
@@ -89,6 +89,41 @@
             line-height: 1.7;
             margin-bottom: 30px;
             padding: 0 10px;
+        }
+
+        /* --- ÁLBUNS DE FOTOS --- */
+        .secao-albuns {
+            margin-bottom: 30px;
+        }
+
+        .album {
+            background-color: #faf6ed;
+            border: 1px solid #ebd9a2;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .album h4 {
+            color: #b59410;
+            margin: 0 0 12px 0;
+            font-size: 1.2em;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 10px;
+            justify-items: center;
+        }
+
+        .foto-galeria {
+            width: 90px;
+            height: 90px;
+            border-radius: 8px;
+            border: 2px solid #d4af37;
+            object-fit: cover;
+            background-color: #eee;
         }
 
         /* --- BLOCOS DE PROGRAMAÇÃO --- */
@@ -233,7 +268,7 @@
     <h1>Bodas de Ouro</h1>
     <p class="subtitulo">50 Anos de Amor, Cumplicidade e História</p>
 
-    <!-- --- DUAS FOTOS --- -->
+    <!-- --- DUAS FOTOS PRINCIPAIS --- -->
     <div class="fotos-container">
         <div class="foto-bloco">
             <div class="foto-moldura">
@@ -244,7 +279,7 @@
 
         <div class="foto-bloco">
             <div class="foto-moldura">
-                <img src="WhatsApp Image 2026-08-30 at 12.02.05.jpeg" alt="Foto do Casal Atualmente">
+                <img src="foto_atual.jpg" alt="Foto do Casal Atualmente">
             </div>
             <span class="foto-legenda">50 Anos Depois</span>
         </div>
@@ -256,13 +291,40 @@
         <p>Gostaríamos muito de compartilhar essa emoção e celebrar esta grande conquista ao lado das pessoas que amamos!</p>
     </div>
 
+    <!-- --- ÁLBUNS DE FOTOS (ENTRE O TEXTO E A PROGRAMAÇÃO) --- -->
+    <div class="secao-albuns">
+        <!-- ÁLBUM 1 -->
+        <div class="album">
+            <h4>📸 Álbum: Nossa História Antiga</h4>
+            <div class="galeria-grid">
+                <img src="album1_foto1.jpg" alt="Foto 1" class="foto-galeria">
+                <img src="album1_foto2.jpg" alt="Foto 2" class="foto-galeria">
+                <img src="album1_foto3.jpg" alt="Foto 3" class="foto-galeria">
+                <img src="album1_foto4.jpg" alt="Foto 4" class="foto-galeria">
+                <img src="album1_foto5.jpg" alt="Foto 5" class="foto-galeria">
+            </div>
+        </div>
+
+        <!-- ÁLBUM 2 -->
+        <div class="album">
+            <h4>📸 Álbum: Momentos em Família</h4>
+            <div class="galeria-grid">
+                <img src="album2_foto1.jpg" alt="Foto 1" class="foto-galeria">
+                <img src="album2_foto2.jpg" alt="Foto 2" class="foto-galeria">
+                <img src="album2_foto3.jpg" alt="Foto 3" class="foto-galeria">
+                <img src="album2_foto4.jpg" alt="Foto 4" class="foto-galeria">
+                <img src="album2_foto5.jpg" alt="Foto 5" class="foto-galeria">
+            </div>
+        </div>
+    </div>
+
     <!-- --- PROGRAMAÇÃO: MISSA E RECEPÇÃO --- -->
     <div class="info-evento">
         <h3>📅 Programação</h3>
         
-        <!-- MISSA (PRIMEIRO) -->
+        <!-- MISSA -->
         <div class="bloco-programacao">
-            <div class="subtitulo-local"><strong>⛪ Misa de Ação de Graças</strong></div>
+            <div class="subtitulo-local"><strong>⛪ Missa de Ação de Graças</strong></div>
             <p class="info-detalhes">
                 <strong>Horário:</strong> 18h30<br>
                 <strong>Local:</strong> Paróquia Santo Antônio<br>
@@ -270,7 +332,7 @@
             </p>
         </div>
 
-        <!-- FESTA (SEGUNDO) -->
+        <!-- FESTA -->
         <div class="bloco-programacao">
             <div class="subtitulo-local"><strong>🎉 Recepção & Comemoração</strong></div>
             <p class="info-detalhes">
@@ -310,7 +372,7 @@
 
 <script>
 function enviarWhatsApp() {
-    const meuNumero = "43996705069"; 
+    const meuNumero = "5511999999999"; 
 
     const nome = document.getElementById("nome").value;
     const acompanhantes = document.getElementById("acompanhantes").value;
