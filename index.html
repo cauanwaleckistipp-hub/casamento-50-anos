@@ -44,7 +44,7 @@
             margin-bottom: 30px;
         }
 
-        /* --- FOTOS PRINCIPAIS (QUADRADAS) --- */
+        /* --- DUAS FOTOS PRINCIPAIS (QUADRADAS) --- */
         .fotos-container {
             display: flex;
             justify-content: center;
@@ -62,7 +62,7 @@
         .foto-moldura {
             width: 160px;
             height: 160px;
-            border-radius: 12px;
+            border-radius: 12px; /* Alterado de redondo (50%) para quadrado com cantos suaves */
             border: 4px solid #d4af37;
             overflow: hidden;
             background-color: #f2f2f2;
@@ -73,7 +73,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: top; /* Ajustado para não cortar a cabeça */
         }
 
         .foto-legenda {
@@ -261,37 +260,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
-
-        /* --- TABELA DE CONFIRMADOS --- */
-        .tabela-container {
-            margin-top: 30px;
-            width: 100%;
-            text-align: left;
-        }
-
-        .tabela-container h4 {
-            color: #b59410;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th, td {
-            border: 1px solid #ebd9a2;
-            padding: 8px 12px;
-            text-align: left;
-            font-size: 0.95em;
-        }
-
-        th {
-            background-color: #faf6ed;
-            color: #b59410;
-        }
     </style>
 </head>
 <body>
@@ -300,18 +268,18 @@
     <h1>Bodas de Ouro</h1>
     <p class="subtitulo">50 Anos de Amor, Cumplicidade e História</p>
 
-    <!-- --- DUAS FOTOS PRINCIPAIS (QUADRADAS) --- -->
+    <!-- --- DUAS FOTOS PRINCIPAIS --- -->
     <div class="fotos-container">
         <div class="foto-bloco">
             <div class="foto-moldura">
-                <img src="casamento_antigo.jpg" alt="Foto do Casamento Antigo">
+                <img src="WhatsApp Image 2026-08-30 at 13.00.20.jpeg" alt="Foto do Casamento Antigo">
             </div>
             <span class="foto-legenda">O Início</span>
         </div>
 
         <div class="foto-bloco">
             <div class="foto-moldura">
-                <img src="foto_atual.jpg" alt="Foto do Casal Atualmente">
+                <img src="WhatsApp Image 2026-08-30 at 13.00.40.jpeg" alt="Foto do Casal Atualmente">
             </div>
             <span class="foto-legenda">50 Anos Depois</span>
         </div>
@@ -323,29 +291,25 @@
         <p>Gostaríamos muito de compartilhar essa emoção e celebrar esta grande conquista ao lado das pessoas que amamos!</p>
     </div>
 
-    <!-- --- ÁLBUNS DE FOTOS (ENTRE O TEXTO E A PROGRAMAÇÃO) --- -->
+    <!-- --- ÁLBUNS DE FOTOS --- -->
     <div class="secao-albuns">
-        <!-- ÁLBUM 1 (5 FOTOS) -->
+        <!-- ÁLBUM 1 -->
         <div class="album">
-            <h4>📸 Álbum: Nossa História Antiga</h4>
+            <h4>📸 Álbum: Nossa História</h4>
             <div class="galeria-grid">
-                <img src="album1_foto1.jpg" alt="Foto 1" class="foto-galeria">
-                <img src="album1_foto2.jpg" alt="Foto 2" class="foto-galeria">
-                <img src="album1_foto3.jpg" alt="Foto 3" class="foto-galeria">
-                <img src="album1_foto4.jpg" alt="Foto 4" class="foto-galeria">
-                <img src="album1_foto5.jpg" alt="Foto 5" class="foto-galeria">
+                <img src="WhatsApp Image 2026-08-30 at 13.21.25.jpeg" alt="Foto 1" class="foto-galeria">
             </div>
         </div>
 
-        <!-- ÁLBUM 2 (5 FOTOS) -->
+        <!-- ÁLBUM 2 -->
         <div class="album">
             <h4>📸 Álbum: Momentos em Família</h4>
             <div class="galeria-grid">
-                <img src="album2_foto1.jpg" alt="Foto 1" class="foto-galeria">
-                <img src="album2_foto2.jpg" alt="Foto 2" class="foto-galeria">
-                <img src="album2_foto3.jpg" alt="Foto 3" class="foto-galeria">
-                <img src="album2_foto4.jpg" alt="Foto 4" class="foto-galeria">
-                <img src="album2_foto5.jpg" alt="Foto 5" class="foto-galeria">
+                <img src="WhatsApp Image 2026-08-30 at 13.18.13 (1).jpeg" alt="Foto 1" class="foto-galeria">
+                <img src="WhatsApp Image 2026-08-30 at 13.33.32.jpeg" alt="Foto 2" class="foto-galeria">
+                <img src="WhatsApp Image 2026-08-30 at 13.38.13.jpeg" alt="Foto 3" class="foto-galeria">
+                <img src="WhatsApp Image 2026-08-30 at 13.38.27.jpeg" alt="Foto 4" class="foto-galeria">
+                <img src="WhatsApp Image 2026-08-30 at 14.13.58.jpeg" alt="Foto 5" class="foto-galeria">
             </div>
         </div>
     </div>
@@ -398,31 +362,13 @@
             <input type="number" id="acompanhantes" min="0" value="0" required>
         </div>
 
-        <button type="button" onclick="confirmarEEnviar()">Confirmar Presença no WhatsApp</button>
+        <button type="button" onclick="enviarWhatsApp()">Confirmar Presença no WhatsApp</button>
     </form>
-
-    <!-- --- TABELA DE CONFIRMAÇÕES --- -->
-    <div class="tabela-container">
-        <h4>📋 Lista de Confirmações</h4>
-        <table id="tabelaPresenca">
-            <thead>
-                <tr>
-                    <th>Nome do Convidado</th>
-                    <th>Acompanhantes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Os nomes aparecem aqui automaticamente -->
-            </tbody>
-        </table>
-    </div>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", carregarTabela);
-
-function confirmarEEnviar() {
-    const meuNumero = "4396705069"; // Coloque seu WhatsApp completo aqui
+function enviarWhatsApp() {
+    const meuNumero = "4396705069"; 
 
     const nome = document.getElementById("nome").value;
     const acompanhantes = document.getElementById("acompanhantes").value;
@@ -432,32 +378,10 @@ function confirmarEEnviar() {
         return;
     }
 
-    // Salva no banco de dados local do navegador
-    let lista = JSON.parse(localStorage.getItem("listaBodas")) || [];
-    lista.push({ nome: nome, acompanhantes: acompanhantes });
-    localStorage.setItem("listaBodas", JSON.stringify(lista));
+    const mensagem = `Olá! Confirmando presença nas Bodas de Ouro:%0A%0A- Nome: ${encodeURIComponent(nome)}%0A- Acompanhantes: ${encodeURIComponent(acompanhantes)}`;
 
-    // Atualiza a tabela na tela
-    carregarTabela();
-
-    // Mensagem enviada para o WhatsApp
-    const mensagem = `*CONFIRMAÇÃO BODAS DE OURO*%0A%0A👤 *Nome:* ${encodeURIComponent(nome)}%0A👥 *Acompanhantes:* ${encodeURIComponent(acompanhantes)}`;
-    
     const url = `https://wa.me/${meuNumero}?text=${mensagem}`;
     window.open(url, "_blank");
-}
-
-function carregarTabela() {
-    const tbody = document.querySelector("#tabelaPresenca tbody");
-    tbody.innerHTML = "";
-
-    let lista = JSON.parse(localStorage.getItem("listaBodas")) || [];
-
-    lista.forEach(item => {
-        let tr = document.createElement("tr");
-        tr.innerHTML = `<td>${item.nome}</td><td>${item.acompanhantes}</td>`;
-        tbody.appendChild(tr);
-    });
 }
 </script>
 
