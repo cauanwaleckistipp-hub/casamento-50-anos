@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,7 +46,7 @@
             margin-bottom: 30px;
         }
 
-.fotos-container {
+        .fotos-container {
             display: flex;
             justify-content: center;
             gap: 20px;
@@ -62,11 +63,12 @@
         .foto-moldura {
             width: 160px;
             height: 160px;
-            border-radius: 12px; /* Alterado de redondo (50%) para quadrado com cantos suaves */
+            border-radius: 12px;
+            /* Alterado de redondo (50%) para quadrado com cantos suaves */
             border: 4px solid #d4af37;
             overflow: hidden;
             background-color: #f2f2f2;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .foto-moldura img {
@@ -169,6 +171,24 @@
             margin: 0;
         }
 
+        .foto-igreja-container {
+            width: 100%;
+            max-height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #d4af37;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .foto-igreja-container img {
+            width: 100%;
+            height: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
         /* --- GOOGLE MAPS --- */
         .mapa-container {
             width: 100%;
@@ -252,144 +272,148 @@
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
     </style>
 </head>
+
 <body>
 
-<div class="convite-container">
-    <h1>Bodas de Ouro</h1>
-    <h2>IRMA BLAU STIPP & SILVIO STIPP</h2>
-    <p class="subtitulo">50 Anos de Amor, Cumplicidade e História</p>
+    <div class="convite-container">
+        <h1>Bodas de Ouro</h1>
+        <h2>IRMA BLAU STIPP & SILVIO STIPP</h2>
+        <p class="subtitulo">50 Anos de Amor, Cumplicidade e História</p>
 
-    <!-- --- DUAS FOTOS PRINCIPAIS --- -->
-    <div class="fotos-container">
-        <div class="foto-bloco">
-            <div class="foto-moldura">
-                <img src="WhatsApp Image 2026-08-30 at 13.00.20.jpeg" alt="Foto do Casamento Antigo">
+        <!-- --- DUAS FOTOS PRINCIPAIS --- -->
+        <div class="fotos-container">
+            <div class="foto-bloco">
+                <div class="foto-moldura">
+                    <img src="WhatsApp Image 2026-08-30 at 13.00.20.jpeg" alt="Foto do Casamento Antigo">
+                </div>
+                <span class="foto-legenda">O Início</span>
             </div>
-            <span class="foto-legenda">O Início</span>
+
+            <div class="foto-bloco">
+                <div class="foto-moldura">
+                    <img src="WhatsApp Image 2026-08-30 at 13.00.40.jpeg" alt="Foto do Casal Atualmente">
+                </div>
+                <span class="foto-legenda">50 Anos Depois</span>
+            </div>
         </div>
 
-        <div class="foto-bloco">
-            <div class="foto-moldura">
-                <img src="WhatsApp Image 2026-08-30 at 13.00.40.jpeg" alt="Foto do Casal Atualmente">
-            </div>
-            <span class="foto-legenda">50 Anos Depois</span>
+        <!-- --- MENSAGEM DO CONVITE --- -->
+        <div class="texto-convite">
+            <p>A jornada do amor verdadeiro é construída dia a dia, e com a bênção de Deus chegamos a meio século de
+                união.</p>
+            <p>Gostaríamos muito de compartilhar essa emoção e celebrar esta grande conquista ao lado das pessoas que
+                amamos!</p>
         </div>
+
+        <!-- --- ÁLBUNS DE FOTOS --- -->
+        <div class="secao-albuns">
+            <!-- ÁLBUM 1 -->
+            <div class="album">
+                <h4>📸 Nossa História</h4>
+                <div class="galeria-grid">
+                    <img src="WhatsApp Image 2026-08-30 at 13.21.25.jpeg" alt="Foto 1" class="foto-galeria">
+                </div>
+            </div>
+
+            <!-- ÁLBUM 2 -->
+            <div class="album">
+                <h4>📸 Álbum: Momentos em Família</h4>
+                <div class="galeria-grid">
+                    <img src="WhatsApp Image 2026-08-30 at 13.18.13 (1).jpeg" alt="Foto 1" class="foto-galeria">
+                    <img src="WhatsApp Image 2026-08-30 at 13.33.32.jpeg" alt="Foto 2" class="foto-galeria">
+                    <img src="WhatsApp Image 2026-08-30 at 13.38.13.jpeg" alt="Foto 3" class="foto-galeria">
+                    <img src="WhatsApp Image 2026-08-30 at 13.38.27.jpeg" alt="Foto 4" class="foto-galeria">
+                    <img src="WhatsApp Image 2026-08-30 at 14.13.58.jpeg" alt="Foto 5" class="foto-galeria">
+                </div>
+            </div>
+        </div>
+
+        <!-- --- PROGRAMAÇÃO: MISSA E RECEPÇÃO --- -->
+        <div class="info-evento">
+            <h3>📅 Programação</h3>
+            <strong>30/01/2027(SÁBADO)</strong>
+
+            <!-- MISSA -->
+            <div class="bloco-programacao">
+                <div class="subtitulo-local"><strong>⛪ Missa de Ação de Graças</strong></div>
+                <p class="info-detalhes">
+                    <strong>Horário:</strong> 10h00<br>
+                    <strong>Local:</strong> Paróquia Santo Antônio<br>
+                    <strong>Endereço:</strong> Centro - Manoel Ribas - PR
+                </p>
+                <div class="foto-igreja-container">
+                    <!-- Substitua 'igreja_santo_antonio.jpg' pelo nome da sua foto -->
+                    <img src="images.jpg" alt="Paróquia Santo Antônio">
+                </div>
+            </div>
+
+            <!-- FESTA -->
+            <div class="bloco-programacao">
+                <div class="subtitulo-local"><strong>🎉 Recepção & Comemoração</strong></div>
+                <p class="info-detalhes">
+                    <strong>Horário:</strong> Logo após a missa<br>
+                    <strong>Local:</strong> ARCAM - Associação Recreativa Coamo<br>
+                    <strong>Endereço:</strong> Manoel Ribas - PR
+                </p>
+
+                <div class="mapa-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.523456789123!2d-51.67000000000000!3d-24.51500000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQXJjYW0gTWFub2VsIFJpYmFz!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr"
+                        allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+                <a href="https://maps.google.com/?q=ARCAM+Manoel+Ribas+PR" target="_blank" class="btn-rota">🗺️ Abrir
+                    rota da ARCAM no Google Maps</a>
+            </div>
+        </div>
+
+        <!-- --- FORMULÁRIO DE CONFIRMAÇÃO VIA WHATSAPP --- -->
+        <form id="partyForm">
+            <h3>Confirme sua Presença</h3>
+
+            <div class="campo-grupo">
+                <label for="nome">Seu Nome:</label>
+                <input type="text" id="nome" required placeholder="Digite seu nome completo">
+            </div>
+
+            <div class="campo-grupo">
+                <label for="acompanhantes">Quantas pessoas vão com você?</label>
+                <input type="number" id="acompanhantes" min="0" value="0" required>
+            </div>
+
+            <button type="button" onclick="enviarWhatsApp()">Confirmar Presença no WhatsApp</button>
+        </form>
     </div>
 
-    <!-- --- MENSAGEM DO CONVITE --- -->
-    <div class="texto-convite">
-        <p>A jornada do amor verdadeiro é construída dia a dia, e com a bênção de Deus chegamos a meio século de união.</p>
-        <p>Gostaríamos muito de compartilhar essa emoção e celebrar esta grande conquista ao lado das pessoas que amamos!</p>
-    </div>
+    <script>
+        function enviarWhatsApp() {
+            const meuNumero = "4396705069";
 
-    <!-- --- ÁLBUNS DE FOTOS --- -->
-    <div class="secao-albuns">
-        <!-- ÁLBUM 1 -->
-        <div class="album">
-            <h4>📸 Nossa História</h4>
-            <div class="galeria-grid">
-                <img src="WhatsApp Image 2026-08-30 at 13.21.25.jpeg" alt="Foto 1" class="foto-galeria">
-            </div>
-        </div>
+            const nome = document.getElementById("nome").value;
+            const acompanhantes = document.getElementById("acompanhantes").value;
 
-        <!-- ÁLBUM 2 -->
-        <div class="album">
-            <h4>📸 Álbum: Momentos em Família</h4>
-            <div class="galeria-grid">
-                <img src="WhatsApp Image 2026-08-30 at 13.18.13 (1).jpeg" alt="Foto 1" class="foto-galeria">
-                <img src="WhatsApp Image 2026-08-30 at 13.33.32.jpeg" alt="Foto 2" class="foto-galeria">
-                <img src="WhatsApp Image 2026-08-30 at 13.38.13.jpeg" alt="Foto 3" class="foto-galeria">
-                <img src="WhatsApp Image 2026-08-30 at 13.38.27.jpeg" alt="Foto 4" class="foto-galeria">
-                <img src="WhatsApp Image 2026-08-30 at 14.13.58.jpeg" alt="Foto 5" class="foto-galeria">
-            </div>
-        </div>
-    </div>
+            if (!nome) {
+                alert("Por favor, preencha o seu nome.");
+                return;
+            }
 
-    <!-- --- PROGRAMAÇÃO: MISSA E RECEPÇÃO --- -->
-    <div class="info-evento">
-        <h3>📅 Programação</h3>
-        <strong>30/01/2027(SÁBADO)</strong>
-        
-        <!-- MISSA -->
-        <div class="bloco-programacao">
-            <div class="subtitulo-local"><strong>⛪ Missa de Ação de Graças</strong></div>
-            <p class="info-detalhes">
-                <strong>Horário:</strong> 10h00<br>
-                <strong>Local:</strong> Paróquia Santo Antônio<br>
-                <strong>Endereço:</strong> Centro - Manoel Ribas - PR 
-            </p>
-            <div class="foto-igreja-container">
-                <!-- Substitua 'igreja_santo_antonio.jpg' pelo nome da sua foto -->
-                <img src="images.jpg" alt="Paróquia Santo Antônio">
-            </div>
-        </div>
+            const mensagem = `Olá! Confirmando presença nas Bodas de Ouro:%0A%0A- Nome: ${encodeURIComponent(nome)}%0A- Acompanhantes: ${encodeURIComponent(acompanhantes)}`;
 
-        <!-- FESTA -->
-        <div class="bloco-programacao">
-            <div class="subtitulo-local"><strong>🎉 Recepção & Comemoração</strong></div>
-            <p class="info-detalhes">
-                <strong>Horário:</strong> Logo após a missa<br>
-                <strong>Local:</strong> ARCAM - Associação Recreativa Coamo<br>
-                <strong>Endereço:</strong> Manoel Ribas - PR
-            </p>
-
-            <div class="mapa-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.523456789123!2d-51.67000000000000!3d-24.51500000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQXJjYW0gTWFub2VsIFJpYmFz!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
-            </div>
-            <a href="https://maps.google.com/?q=ARCAM+Manoel+Ribas+PR" target="_blank" class="btn-rota">🗺️ Abrir rota da ARCAM no Google Maps</a>
-        </div>
-    </div>
-
-    <!-- --- FORMULÁRIO DE CONFIRMAÇÃO VIA WHATSAPP --- -->
-    <form id="partyForm">
-        <h3>Confirme sua Presença</h3>
-        
-        <div class="campo-grupo">
-            <label for="nome">Seu Nome:</label>
-            <input type="text" id="nome" required placeholder="Digite seu nome completo">
-        </div>
-
-        <div class="campo-grupo">
-            <label for="acompanhantes">Quantas pessoas vão com você?</label>
-            <input type="number" id="acompanhantes" min="0" value="0" required>
-        </div>
-
-        <button type="button" onclick="enviarWhatsApp()">Confirmar Presença no WhatsApp</button>
-    </form>
-</div>
-
-<script>
-function enviarWhatsApp() {
-    const meuNumero = "4396705069"; 
-
-    const nome = document.getElementById("nome").value;
-    const acompanhantes = document.getElementById("acompanhantes").value;
-
-    if (!nome) {
-        alert("Por favor, preencha o seu nome.");
-        return;
-    }
-
-    const mensagem = `Olá! Confirmando presença nas Bodas de Ouro:%0A%0A- Nome: ${encodeURIComponent(nome)}%0A- Acompanhantes: ${encodeURIComponent(acompanhantes)}`;
-
-    const url = `https://wa.me/${meuNumero}?text=${mensagem}`;
-    window.open(url, "_blank");
-}
-</script>
+            const url = `https://wa.me/${meuNumero}?text=${mensagem}`;
+            window.open(url, "_blank");
+        }
+    </script>
 
 </body>
+
 </html>
