@@ -33,6 +33,7 @@
             font-size: 2.6em;
             margin-bottom: 5px;
             font-weight: normal;
+            letter-spacing: 1px;
         }
 
         .subtitulo {
@@ -43,7 +44,7 @@
             margin-bottom: 30px;
         }
 
-        /* --- FOTOS PRINCIPAIS --- */
+        /* --- FOTOS PRINCIPAIS (QUADRADAS) --- */
         .fotos-container {
             display: flex;
             justify-content: center;
@@ -65,13 +66,14 @@
             border: 4px solid #d4af37;
             overflow: hidden;
             background-color: #f2f2f2;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .foto-moldura img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: top;
+            object-position: top; /* Ajustado para não cortar a cabeça */
         }
 
         .foto-legenda {
@@ -81,11 +83,123 @@
             font-weight: bold;
         }
 
+        /* --- TEXTO DO CONVITE --- */
         .texto-convite {
             color: #444;
             font-size: 1.15em;
             line-height: 1.7;
             margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* --- ÁLBUNS DE FOTOS --- */
+        .secao-albuns {
+            margin-bottom: 30px;
+        }
+
+        .album {
+            background-color: #faf6ed;
+            border: 1px solid #ebd9a2;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+        .album h4 {
+            color: #b59410;
+            margin: 0 0 12px 0;
+            font-size: 1.2em;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 10px;
+            justify-items: center;
+        }
+
+        .foto-galeria {
+            width: 90px;
+            height: 90px;
+            border-radius: 8px;
+            border: 2px solid #d4af37;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        /* --- BLOCOS DE PROGRAMAÇÃO --- */
+        .info-evento {
+            background-color: #faf6ed;
+            border: 1px solid #ebd9a2;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .info-evento h3 {
+            color: #b59410;
+            margin-top: 0;
+            font-size: 1.3em;
+            border-bottom: 1px solid #ebd9a2;
+            padding-bottom: 8px;
+        }
+
+        .bloco-programacao {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ebd9a2;
+        }
+
+        .bloco-programacao:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .subtitulo-local {
+            color: #b59410;
+            font-size: 1.15em;
+            margin-bottom: 8px;
+        }
+
+        .info-detalhes {
+            color: #333;
+            font-size: 1.05em;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* --- GOOGLE MAPS --- */
+        .mapa-container {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid #d4af37;
+            margin-top: 12px;
+        }
+
+        .mapa-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .btn-rota {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #b59410;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .btn-rota:hover {
+            background-color: #8c720a;
         }
 
         /* --- FORMULÁRIO --- */
@@ -95,6 +209,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+        }
+
+        #partyForm h3 {
+            color: #444;
+            margin-bottom: 20px;
+            font-size: 1.3em;
         }
 
         .campo-grupo {
@@ -108,6 +228,7 @@
             display: block;
             margin-bottom: 5px;
             color: #555;
+            font-size: 0.95em;
         }
 
         input {
@@ -115,7 +236,9 @@
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 8px;
+            font-size: 1em;
             box-sizing: border-box;
+            font-family: inherit;
         }
 
         button {
@@ -125,14 +248,21 @@
             color: white;
             border: none;
             padding: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
             border-radius: 8px;
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        /* --- TABELA DE CONFIRMADOS NO CÓDIGO --- */
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* --- TABELA DE CONFIRMADOS --- */
         .tabela-container {
             margin-top: 30px;
             width: 100%;
@@ -170,26 +300,91 @@
     <h1>Bodas de Ouro</h1>
     <p class="subtitulo">50 Anos de Amor, Cumplicidade e História</p>
 
+    <!-- --- DUAS FOTOS PRINCIPAIS (QUADRADAS) --- -->
     <div class="fotos-container">
         <div class="foto-bloco">
             <div class="foto-moldura">
-                <img src="casamento_antigo.jpg" alt="Foto Antiga">
+                <img src="casamento_antigo.jpg" alt="Foto do Casamento Antigo">
             </div>
             <span class="foto-legenda">O Início</span>
         </div>
+
         <div class="foto-bloco">
             <div class="foto-moldura">
-                <img src="foto_atual.jpg" alt="Foto Atual">
+                <img src="foto_atual.jpg" alt="Foto do Casal Atualmente">
             </div>
             <span class="foto-legenda">50 Anos Depois</span>
         </div>
     </div>
 
+    <!-- --- MENSAGEM DO CONVITE --- -->
     <div class="texto-convite">
+        <p>A jornada do amor verdadeiro é construída dia a dia, e com a bênção de Deus chegamos a meio século de união.</p>
         <p>Gostaríamos muito de compartilhar essa emoção e celebrar esta grande conquista ao lado das pessoas que amamos!</p>
     </div>
 
-    <!-- FORMULÁRIO -->
+    <!-- --- ÁLBUNS DE FOTOS (ENTRE O TEXTO E A PROGRAMAÇÃO) --- -->
+    <div class="secao-albuns">
+        <!-- ÁLBUM 1 (5 FOTOS) -->
+        <div class="album">
+            <h4>📸 Álbum: Nossa História Antiga</h4>
+            <div class="galeria-grid">
+                <img src="album1_foto1.jpg" alt="Foto 1" class="foto-galeria">
+                <img src="album1_foto2.jpg" alt="Foto 2" class="foto-galeria">
+                <img src="album1_foto3.jpg" alt="Foto 3" class="foto-galeria">
+                <img src="album1_foto4.jpg" alt="Foto 4" class="foto-galeria">
+                <img src="album1_foto5.jpg" alt="Foto 5" class="foto-galeria">
+            </div>
+        </div>
+
+        <!-- ÁLBUM 2 (5 FOTOS) -->
+        <div class="album">
+            <h4>📸 Álbum: Momentos em Família</h4>
+            <div class="galeria-grid">
+                <img src="album2_foto1.jpg" alt="Foto 1" class="foto-galeria">
+                <img src="album2_foto2.jpg" alt="Foto 2" class="foto-galeria">
+                <img src="album2_foto3.jpg" alt="Foto 3" class="foto-galeria">
+                <img src="album2_foto4.jpg" alt="Foto 4" class="foto-galeria">
+                <img src="album2_foto5.jpg" alt="Foto 5" class="foto-galeria">
+            </div>
+        </div>
+    </div>
+
+    <!-- --- PROGRAMAÇÃO: MISSA E RECEPÇÃO --- -->
+    <div class="info-evento">
+        <h3>📅 Programação</h3>
+        
+        <!-- MISSA -->
+        <div class="bloco-programacao">
+            <div class="subtitulo-local"><strong>⛪ Missa de Ação de Graças</strong></div>
+            <p class="info-detalhes">
+                <strong>Horário:</strong> 18h30<br>
+                <strong>Local:</strong> Paróquia Santo Antônio<br>
+                <strong>Endereço:</strong> Centro - Manoel Ribas - PR
+            </p>
+        </div>
+
+        <!-- FESTA -->
+        <div class="bloco-programacao">
+            <div class="subtitulo-local"><strong>🎉 Recepção & Comemoração</strong></div>
+            <p class="info-detalhes">
+                <strong>Horário:</strong> Logo após a missa (20h00)<br>
+                <strong>Local:</strong> ARCAM - Associação Recreativa Coamo<br>
+                <strong>Endereço:</strong> Manoel Ribas - PR
+            </p>
+
+            <div class="mapa-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3627.523456789123!2d-51.67000000000000!3d-24.51500000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQXJjYW0gTWFub2VsIFJpYmFz!5e0!3m2!1spt-BR!2sbr!4v1600000000000!5m2!1spt-BR!2sbr" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+            <a href="https://maps.google.com/?q=ARCAM+Manoel+Ribas+PR" target="_blank" class="btn-rota">🗺️ Abrir rota da ARCAM no Google Maps</a>
+        </div>
+    </div>
+
+    <!-- --- FORMULÁRIO DE CONFIRMAÇÃO VIA WHATSAPP --- -->
     <form id="partyForm">
         <h3>Confirme sua Presença</h3>
         
@@ -206,7 +401,7 @@
         <button type="button" onclick="confirmarEEnviar()">Confirmar Presença no WhatsApp</button>
     </form>
 
-    <!-- TABELA ONDE OS NOMES FICAM REGISTRADOS -->
+    <!-- --- TABELA DE CONFIRMAÇÕES --- -->
     <div class="tabela-container">
         <h4>📋 Lista de Confirmações</h4>
         <table id="tabelaPresenca">
@@ -224,11 +419,11 @@
 </div>
 
 <script>
-// Carrega a tabela assim que a página abre
 document.addEventListener("DOMContentLoaded", carregarTabela);
 
 function confirmarEEnviar() {
-    const meuNumero = "5511999999999"; // Coloque seu número aqui
+    const meuNumero = "5511999999999"; // Coloque seu WhatsApp completo aqui
+
     const nome = document.getElementById("nome").value;
     const acompanhantes = document.getElementById("acompanhantes").value;
 
@@ -237,15 +432,15 @@ function confirmarEEnviar() {
         return;
     }
 
-    // 1. Salva no banco de dados local da página (LocalStorage)
+    // Salva no banco de dados local do navegador
     let lista = JSON.parse(localStorage.getItem("listaBodas")) || [];
     lista.push({ nome: nome, acompanhantes: acompanhantes });
     localStorage.setItem("listaBodas", JSON.stringify(lista));
 
-    // 2. Atualiza a tabela na tela
+    // Atualiza a tabela na tela
     carregarTabela();
 
-    // 3. Monta a mensagem organizada para o seu WhatsApp
+    // Mensagem enviada para o WhatsApp
     const mensagem = `*CONFIRMAÇÃO BODAS DE OURO*%0A%0A👤 *Nome:* ${encodeURIComponent(nome)}%0A👥 *Acompanhantes:* ${encodeURIComponent(acompanhantes)}`;
     
     const url = `https://wa.me/${meuNumero}?text=${mensagem}`;
@@ -254,7 +449,7 @@ function confirmarEEnviar() {
 
 function carregarTabela() {
     const tbody = document.querySelector("#tabelaPresenca tbody");
-    tbody.innerHTML = ""; // Limpa a tabela antes de recarregar
+    tbody.innerHTML = "";
 
     let lista = JSON.parse(localStorage.getItem("listaBodas")) || [];
 
